@@ -1,6 +1,6 @@
 # Live demo
 
-This demo is published on [this website][demo-live-link].
+The demo is published on [this page][demo-live-link].
 
 It displays different clocks in different time zones.
 You can add as many clocks as you want using the plus button.
@@ -13,7 +13,7 @@ You can clock on the gear icon to change the global settings (ex: background).
 ## Reusability
 
 This demo demonstrates how you can reuse existing libraries written in JavaFx in a WebFx application.
-Here, it is using [Enzo][hansolo-enzo-link], a JavaFx library which offers many controls, and in particular this clock control with 4 different designs.
+Here, it is using [Enzo][hansolo-enzo-link], a JavaFx library which implements many controls, and in particular this clock control with 4 different designs.
 The flip effect when clicking on a clock to display the settings on its back is also taken from this library.
 
 ## Responsive design
