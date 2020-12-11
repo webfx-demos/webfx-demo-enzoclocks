@@ -26,10 +26,10 @@
     <source path="javafx/event"/>
     <source path="javafx/util"/>
     <!--=========================< webfx-kit-javafxcontrols-emul >==========================-->
-    <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
     <!-- used by webfx-extras-cell (SOURCE) -->
     <!-- used by webfx-extras-webtext-controls (SOURCE) -->
     <!-- used by webfx-kit-javafxcontrols-registry-gwt (SOURCE) -->
+    <!-- used by webfx-lib-enzo (SOURCE) -->
     <source path="com/sun/javafx/scene/control"/>
     <source path="com/sun/javafx/scene/control/behavior"/>
     <source path="com/sun/javafx/scene/control/skin"/>
@@ -39,10 +39,10 @@
     <public includes="images/checkbox/" path=""/>
     <!--=========================< webfx-kit-javafxgraphics-emul >==========================-->
     <!-- used by webfx-kit-javafxcontrols-emul (SOURCE) -->
-    <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
     <!-- used by webfx-extras-cell (SOURCE) -->
     <!-- used by webfx-kit-gwt (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-peers (SOURCE) -->
+    <!-- used by webfx-lib-enzo (SOURCE) -->
     <source path="com/sun/javafx/application"/>
     <source path="com/sun/javafx/cursor"/>
     <source path="com/sun/javafx/geom"/>
@@ -108,15 +108,9 @@
     <!--=======================< webfx-demo-enzoclocks-application >========================-->
     <!-- used by webfx-demo-enzoclocks-application-gwt (APPLICATION) -->
     <!-- used by webfx-demo-enzoclocks-application-gwt (IMPLICIT_PROVIDER) -->
-    <source path="eu/hansolo/enzo/clock"/>
-    <source path="eu/hansolo/enzo/clock/skin"/>
-    <source path="eu/hansolo/enzo/flippanel"/>
-    <source path="eu/hansolo/enzo/fonts"/>
     <source path="webfx/demo/enzoclocks"/>
     <source path="webfx/demo/enzoclocks/circlespacker"/>
     <source path="webfx/demo/enzoclocks/settings"/>
-    <resource path="eu/hansolo/enzo/clock"/>
-    <public includes="eu/hansolo/enzo/clock/" path=""/>
     <!--===============================< webfx-extras-cell >================================-->
     <!-- used by webfx-extras-visual (SOURCE) -->
     <source path="webfx/extras/cell/collator"/>
@@ -217,6 +211,14 @@
     <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
     <source path="webfx/kit/util/properties"/>
     <source path="webfx/kit/util/properties/conversion"/>
+    <!--=================================< webfx-lib-enzo >=================================-->
+    <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
+    <source path="eu/hansolo/enzo/clock"/>
+    <source path="eu/hansolo/enzo/clock/skin"/>
+    <source path="eu/hansolo/enzo/flippanel"/>
+    <source path="eu/hansolo/enzo/fonts"/>
+    <resource path="eu/hansolo/enzo/clock"/>
+    <public includes="eu/hansolo/enzo/clock/" path=""/>
     <!--=======================< webfx-platform-client-uischeduler >========================-->
     <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
     <!-- used by webfx-platform-gwt-uischeduler-impl (SOURCE) -->
@@ -254,7 +256,6 @@
     <source path="webfx/platform/shared/services/log"/>
     <source path="webfx/platform/shared/services/log/spi"/>
     <!--=========================< webfx-platform-shared-resource >=========================-->
-    <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-peers-gwt (SOURCE) -->
     <!-- used by webfx-platform-gwt-resource-impl (SOURCE) -->
     <source path="webfx/platform/shared/services/resource"/>

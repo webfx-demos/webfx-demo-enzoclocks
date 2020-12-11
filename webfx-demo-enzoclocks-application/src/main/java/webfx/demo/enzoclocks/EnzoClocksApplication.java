@@ -34,7 +34,6 @@ import webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import webfx.demo.enzoclocks.settings.ClockSetting;
 import webfx.demo.enzoclocks.settings.SvgButtonPaths;
 import webfx.platform.client.services.uischeduler.UiScheduler;
-import webfx.platform.shared.services.resource.ResourceService;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -73,7 +72,7 @@ public final class EnzoClocksApplication extends Application {
         UiScheduler.schedulePeriodic(20, this::updateClockTimes);
 
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(ResourceService.toUrl("/eu/hansolo/enzo/clock/clock.css", getClass()));
+        //scene.getStylesheets().add(ResourceService.toUrl("/eu/hansolo/enzo/clock/clock.css", getClass()));
         stage.setTitle("Enzo Clocks");
         stage.setScene(scene);
         stage.show();

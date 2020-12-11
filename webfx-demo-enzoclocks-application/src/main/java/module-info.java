@@ -11,21 +11,13 @@ module webfx.demo.enzoclocks.application {
     requires webfx.extras.visual;
     requires webfx.extras.visual.controls.grid;
     requires webfx.kit.util;
+    requires webfx.lib.enzo;
     requires webfx.platform.client.uischeduler;
-    requires webfx.platform.shared.resource;
-    requires webfx.platform.shared.scheduler;
 
     // Exported packages
-    exports eu.hansolo.enzo.clock;
-    exports eu.hansolo.enzo.clock.skin;
-    exports eu.hansolo.enzo.flippanel;
-    exports eu.hansolo.enzo.fonts;
     exports webfx.demo.enzoclocks;
     exports webfx.demo.enzoclocks.circlespacker;
     exports webfx.demo.enzoclocks.settings;
-
-    // Resources packages
-    opens eu.hansolo.enzo.clock;
 
     // Provided services
     provides javafx.application.Application with webfx.demo.enzoclocks.EnzoClocksApplication;
