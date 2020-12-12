@@ -8,7 +8,7 @@ module webfx.demo.enzoclocks.application {
     requires javafx.controls;
     requires javafx.graphics;
     requires webfx.extras.type;
-    requires webfx.extras.visual;
+    requires webfx.extras.visual.base;
     requires webfx.extras.visual.controls.grid;
     requires webfx.kit.util;
     requires webfx.lib.enzo;

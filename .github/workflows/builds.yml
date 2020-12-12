@@ -76,8 +76,9 @@ jobs:
       dep-repo-1: 'webfx-project/webfx-parent'
       dep-repo-2: 'webfx-project/webfx-lib-javacupruntime'
       dep-repo-3: 'webfx-project/webfx'
-      dep-repo-4: 'webfx-project/webfx-extras' # Due to use of VisualGrid
-      dep-repo-5: 'webfx-project/webfx-lib-enzo'
+      dep-repo-4: 'webfx-project/webfx-extras'        # Due to use of VisualGrid
+      dep-repo-5: 'webfx-project/webfx-extras-visual' # Due to use of VisualGrid
+      dep-repo-6: 'webfx-project/webfx-lib-enzo'
       app-name:  ${{ matrix.app.name }}
       app-repo-dir:              .
       app-parent-module-dir:     .
@@ -183,6 +184,17 @@ jobs:
       - name: Build dependent repository 4
         run: mvn -B -P '!gwt-compile,!javafx-fatjar,!javapackager' install
         working-directory: 'dep-repo-5'
+
+      # Dependent Repository 6
+      - name: Checkout dependent repository 6
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.dep-repo-6 }}
+          path: 'dep-repo-6'
+
+      - name: Build dependent repository 6
+        run: mvn -B -P '!gwt-compile,!javafx-fatjar,!javapackager' install
+        working-directory: 'dep-repo-6'
 
 
       ##################################################################################################################

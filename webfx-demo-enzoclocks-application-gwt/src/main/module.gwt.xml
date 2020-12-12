@@ -112,7 +112,7 @@
     <source path="webfx/demo/enzoclocks/circlespacker"/>
     <source path="webfx/demo/enzoclocks/settings"/>
     <!--===============================< webfx-extras-cell >================================-->
-    <!-- used by webfx-extras-visual (SOURCE) -->
+    <!-- used by webfx-extras-visual-base (SOURCE) -->
     <source path="webfx/extras/cell/collator"/>
     <source path="webfx/extras/cell/renderer"/>
     <source path="webfx/extras/cell/rowstyle"/>
@@ -124,9 +124,9 @@
     <source path="webfx/extras/label"/>
     <!--===============================< webfx-extras-type >================================-->
     <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
-    <!-- used by webfx-extras-visual (SOURCE) -->
+    <!-- used by webfx-extras-visual-base (SOURCE) -->
     <source path="webfx/extras/type"/>
-    <!--==============================< webfx-extras-visual >===============================-->
+    <!--============================< webfx-extras-visual-base >============================-->
     <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
     <!-- used by webfx-extras-visual-controls-grid (SOURCE) -->
     <source path="webfx/extras/visual"/>
