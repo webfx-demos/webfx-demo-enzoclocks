@@ -23,7 +23,7 @@ JavaFx has a great feature to implement responsive design in your application (a
 For example, this demo layouts the clocks according to the window width & height using a circles packer algorithm,
 a performance that is not achievable with a standard responsive design approach based on CSS rules. 
 
-[demo-live-link]: https://webfx-enzoclocks-demo.netlify.app
+[demo-live-link]: https://enzoclocks.webfx-project.org
 [demo-source-link]: https://github.com/webfx-project/webfx/blob/master/webfx-demos/webfx-demo-enzoclocks/webfx-demo-enzoclocks-application/src/main/java/webfx/demo/enzoclocks/EnzoClocksApplication.java
 [hansolo-enzo-link]: https://bitbucket.org/hansolo/enzo/src
 [demo-responsive-link]: https://github.com/webfx-project/webfx-demo-tallycounter#responsive-design
