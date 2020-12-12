@@ -75,7 +75,7 @@
     <properties>
         <plugin.javapackager.name>EnzoClocks</plugin.javapackager.name>
         <plugin.javapackager.displayName>Enzo Clocks</plugin.javapackager.displayName>
-        <plugin.javapackager.url>https://webfx-enzoclocks-demo.netlify.app</plugin.javapackager.url>
+        <plugin.javapackager.url>https://enzoclocks.webfx-project.org</plugin.javapackager.url>
     </properties>
 
     <build>
