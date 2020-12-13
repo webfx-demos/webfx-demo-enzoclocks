@@ -15,11 +15,11 @@ module webfx.demo.enzoclocks.application {
     requires webfx.platform.client.uischeduler;
 
     // Exported packages
-    exports webfx.demo.enzoclocks;
-    exports webfx.demo.enzoclocks.circlespacker;
-    exports webfx.demo.enzoclocks.settings;
+    exports dev.webfx.demo.enzoclocks;
+    exports dev.webfx.demo.enzoclocks.circlespacker;
+    exports dev.webfx.demo.enzoclocks.settings;
 
     // Provided services
-    provides javafx.application.Application with webfx.demo.enzoclocks.EnzoClocksApplication;
+    provides javafx.application.Application with dev.webfx.demo.enzoclocks.EnzoClocksApplication;
 
 }

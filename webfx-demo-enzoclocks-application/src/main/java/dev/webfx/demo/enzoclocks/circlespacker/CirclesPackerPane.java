@@ -1,4 +1,4 @@
-package webfx.demo.enzoclocks.circlespacker;
+package dev.webfx.demo.enzoclocks.circlespacker;
 
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;

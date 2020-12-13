@@ -1,4 +1,4 @@
-package webfx.demo.enzoclocks;
+package dev.webfx.demo.enzoclocks;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

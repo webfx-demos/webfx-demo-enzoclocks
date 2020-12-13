@@ -1,4 +1,4 @@
-package webfx.demo.enzoclocks.settings;
+package dev.webfx.demo.enzoclocks.settings;
 
 /**
  * @author Bruno Salmon

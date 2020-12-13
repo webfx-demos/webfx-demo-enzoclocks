@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package webfx.demo.enzoclocks.settings;
+package dev.webfx.demo.enzoclocks.settings;
 
 import javafx.animation.Interpolator;
 import javafx.geometry.Point2D;

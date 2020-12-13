@@ -1,4 +1,4 @@
-package webfx.demo.enzoclocks.circlespacker;
+package dev.webfx.demo.enzoclocks.circlespacker;
 
 import java.util.Arrays;
 import java.util.Comparator;

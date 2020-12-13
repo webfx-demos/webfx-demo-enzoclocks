@@ -24,6 +24,6 @@ For example, this demo layouts the clocks according to the window width & height
 a performance that is not achievable with a standard responsive design approach based on CSS rules. 
 
 [demo-live-link]: https://enzoclocks.webfx.dev
-[demo-source-link]: https://github.com/webfx-project/webfx/blob/master/webfx-demos/webfx-demo-enzoclocks/webfx-demo-enzoclocks-application/src/main/java/webfx/demo/enzoclocks/EnzoClocksApplication.java
+[demo-source-link]: https://github.com/webfx-project/webfx/blob/master/webfx-demos/webfx-demo-enzoclocks/webfx-demo-enzoclocks-application/src/main/java/dev/webfx/demo/enzoclocks/EnzoClocksApplication.java
 [hansolo-enzo-link]: https://bitbucket.org/hansolo/enzo/src
 [demo-responsive-link]: https://github.com/webfx-project/webfx-demo-tallycounter#responsive-design

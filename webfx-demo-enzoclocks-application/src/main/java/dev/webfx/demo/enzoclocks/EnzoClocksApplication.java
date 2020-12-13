@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package webfx.demo.enzoclocks;
+package dev.webfx.demo.enzoclocks;
 
 import eu.hansolo.enzo.clock.Clock;
 import javafx.application.Application;
@@ -29,11 +29,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
-import webfx.demo.enzoclocks.circlespacker.CirclesPackerPane;
-import webfx.demo.enzoclocks.settings.BackgroundMenuPane;
-import webfx.demo.enzoclocks.settings.ClockSetting;
-import webfx.demo.enzoclocks.settings.SvgButtonPaths;
-import webfx.platform.client.services.uischeduler.UiScheduler;
+import dev.webfx.demo.enzoclocks.circlespacker.CirclesPackerPane;
+import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
+import dev.webfx.demo.enzoclocks.settings.ClockSetting;
+import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
+import dev.webfx.platform.client.services.uischeduler.UiScheduler;
 
 import java.time.LocalTime;
 import java.util.ArrayList;

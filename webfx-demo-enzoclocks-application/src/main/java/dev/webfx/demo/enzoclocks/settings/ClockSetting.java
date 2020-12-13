@@ -1,4 +1,4 @@
-package webfx.demo.enzoclocks.settings;
+package dev.webfx.demo.enzoclocks.settings;
 
 import eu.hansolo.enzo.clock.Clock;
 import eu.hansolo.enzo.clock.ClockBuilder;
@@ -15,14 +15,14 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import webfx.extras.type.PrimType;
-import webfx.extras.visual.SelectionMode;
-import webfx.extras.visual.VisualColumn;
-import webfx.extras.visual.VisualResultBuilder;
-import webfx.extras.visual.VisualStyle;
-import webfx.extras.visual.controls.grid.SkinnedVisualGrid;
-import webfx.extras.visual.controls.grid.VisualGrid;
-import webfx.kit.util.properties.Properties;
+import dev.webfx.extras.type.PrimType;
+import dev.webfx.extras.visual.SelectionMode;
+import dev.webfx.extras.visual.VisualColumn;
+import dev.webfx.extras.visual.VisualResultBuilder;
+import dev.webfx.extras.visual.VisualStyle;
+import dev.webfx.extras.visual.controls.grid.SkinnedVisualGrid;
+import dev.webfx.extras.visual.controls.grid.VisualGrid;
+import dev.webfx.kit.util.properties.Properties;
 
 import java.time.Instant;
 import java.time.LocalTime;
