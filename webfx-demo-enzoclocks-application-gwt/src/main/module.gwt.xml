@@ -109,6 +109,8 @@
     <inherits name="org.gwtproject.nio.GwtNioSupport"/>
     <!--==================================< javafx-base >===================================-->
     <!-- used by webfx-kit-javafxgraphics-peers-base (SOURCE) -->
+    <!--==========================< org.jresearch.gwt.time.tzdb >===========================-->
+    <!-- used by webfx-demo-enzoclocks-application-gwt (SOURCE) -->
     <!--=======================< webfx-demo-enzoclocks-application >========================-->
     <!-- used by webfx-demo-enzoclocks-application-gwt (APPLICATION) -->
     <!-- used by webfx-demo-enzoclocks-application-gwt (IMPLICIT_PROVIDER) -->

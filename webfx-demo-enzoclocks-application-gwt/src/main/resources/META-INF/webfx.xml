@@ -1,3 +1,11 @@
 <module executable="true">
 
+    <dependencies>
+
+        <source-modules>
+            <module>org.jresearch.gwt.time.tzdb</module>
+        </source-modules>
+
+    </dependencies>
+
 </module>
