@@ -42,7 +42,13 @@
             <groupId>org.jresearch.gwt.time</groupId>
             <version>2.0.3</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>org.jresearch.gwt.time</groupId>
+            <artifactId>org.jresearch.gwt.time.tzdb</artifactId>
+            <version>1.4.15</version>
+        </dependency>
+
         <dependency>
             <artifactId>gwt-dev</artifactId>
             <groupId>com.google.gwt</groupId>
