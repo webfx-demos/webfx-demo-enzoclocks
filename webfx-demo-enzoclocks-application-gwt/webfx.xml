@@ -3,9 +3,7 @@
 
     <dependencies>
 
-        <source-modules>
-            <module>org.jresearch.gwt.time.tzdb</module>
-        </source-modules>
+        <source-module>org.jresearch.gwt.time.tzdb</source-module>
 
     </dependencies>
 
