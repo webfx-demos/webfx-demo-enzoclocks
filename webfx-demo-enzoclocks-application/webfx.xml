@@ -6,7 +6,7 @@
     </packages>
 
     <providers>
-        <provider spi="javafx.application.Application">dev.webfx.demo.enzoclocks.EnzoClocksApplication</provider>
+        <javafx.application.Application>dev.webfx.demo.enzoclocks.EnzoClocksApplication</javafx.application.Application>
     </providers>
 
     <dependencies>
