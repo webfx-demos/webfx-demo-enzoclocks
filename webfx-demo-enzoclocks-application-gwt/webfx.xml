@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<module executable="true">
+<project executable="true">
 
     <dependencies>
         <source-modules/>
         <source-module>org.jresearch.gwt.time.tzdb</source-module>
     </dependencies>
 
-</module>
+</project>
