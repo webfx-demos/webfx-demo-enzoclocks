@@ -2,9 +2,9 @@
 <project executable="true">
 
     <dependencies>
-        <source-modules>
-            <undiscovered-source-module>org.jresearch.gwt.time.tzdb</undiscovered-source-module>
-        </source-modules>
+        <used-by-source-modules>
+            <undiscovered-used-by-source-module>org.jresearch.gwt.time.tzdb</undiscovered-used-by-source-module>
+        </used-by-source-modules>
     </dependencies>
 
 </project>
