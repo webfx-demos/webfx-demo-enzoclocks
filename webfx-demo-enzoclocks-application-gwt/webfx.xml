@@ -3,7 +3,7 @@
 
     <dependencies>
         <used-by-source-modules>
-            <undetected-used-by-source-module>org.jresearch.gwt.time.tzdb</undetected-used-by-source-module>
+            <undetected-module>org.jresearch.gwt.time.tzdb</undetected-module>
         </used-by-source-modules>
     </dependencies>
 
