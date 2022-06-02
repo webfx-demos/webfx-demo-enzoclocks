@@ -12,8 +12,9 @@
     <!--===========================< webfx-kit-javafxbase-emul >============================-->
     <!-- used by webfx-kit-javafxcontrols-emul (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
-    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
-    <!-- used by webfx-kit-javafxgraphics-peers (SOURCE) -->
+    <!-- used by webfx-extras-imagestore (SOURCE) -->
+    <!-- used by webfx-extras-webtext-controls (SOURCE) -->
+    <!-- used by webfx-lib-enzo (SOURCE) -->
     <source path="com/sun/javafx"/>
     <source path="com/sun/javafx/binding"/>
     <source path="com/sun/javafx/collections"/>
@@ -27,7 +28,6 @@
     <source path="javafx/event"/>
     <source path="javafx/util"/>
     <!--=========================< webfx-kit-javafxcontrols-emul >==========================-->
-    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
     <!-- used by webfx-extras-webtext-controls (SOURCE) -->
     <!-- used by webfx-kit-javafxcontrols-registry-gwt (SOURCE) -->
     <!-- used by webfx-lib-enzo (SOURCE) -->
@@ -40,11 +40,9 @@
     <public includes="images/checkbox/" path=""/>
     <!--=========================< webfx-kit-javafxgraphics-emul >==========================-->
     <!-- used by webfx-kit-javafxcontrols-emul (SOURCE) -->
-    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
-    <!-- used by webfx-extras-webtext-controls (SOURCE) -->
+    <!-- used by webfx-extras-imagestore (SOURCE) -->
     <!-- used by webfx-kit-gwt (SOURCE) -->
-    <!-- used by webfx-kit-javafxgraphics-peers (SOURCE) -->
-    <!-- used by webfx-lib-enzo (SOURCE) -->
+    <!-- used by webfx-kit-javafxgraphics-registry-gwt (SOURCE) -->
     <source path="com/sun/javafx/application"/>
     <source path="com/sun/javafx/cursor"/>
     <source path="com/sun/javafx/geom"/>
@@ -81,7 +79,9 @@
     <source path="javafx/stage"/>
     <!--=================================< elemental2-dom >=================================-->
     <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
+    <!-- used by webfx-extras-webtext-controls-peers-gwt (SOURCE) -->
     <!-- used by webfx-kit-gwt (SOURCE) -->
+    <!-- used by webfx-kit-javafxcontrols-peers-gwt (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-peers-gwt (SOURCE) -->
     <!-- used by webfx-platform-gwt-shutdown-impl (SOURCE) -->
     <!-- used by webfx-platform-gwt-uischeduler-impl (SOURCE) -->
@@ -90,6 +90,7 @@
     <!-- used by webfx-kit-javafxgraphics-peers-gwt (SOURCE) -->
     <inherits name="elemental2.svg.Svg"/>
     <!--====================================< gwt-user >====================================-->
+    <!-- used by webfx-extras-webtext-controls-peers-gwt (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-peers-gwt (SOURCE) -->
     <!-- used by webfx-platform-gwt-boot-impl (SOURCE) -->
     <!-- used by webfx-platform-gwt-emul-javabase (SOURCE) -->
@@ -108,7 +109,7 @@
     <source path="dev/webfx/demo/enzoclocks/settings"/>
     <!--===============================< webfx-extras-cell >================================-->
     <!-- used by webfx-extras-visual-base (SOURCE) -->
-    <!-- used by webfx-extras-visual-controls-grid-peers-base (SOURCE) -->
+    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
     <source path="dev/webfx/extras/cell/collator"/>
     <source path="dev/webfx/extras/cell/renderer"/>
     <source path="dev/webfx/extras/cell/rowstyle"/>
@@ -124,7 +125,7 @@
     <source path="dev/webfx/extras/type"/>
     <!--============================< webfx-extras-visual-base >============================-->
     <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
-    <!-- used by webfx-extras-visual-controls-grid (SOURCE) -->
+    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
     <source path="dev/webfx/extras/visual"/>
     <source path="dev/webfx/extras/visual/impl"/>
     <!--==========================< webfx-extras-visual-controls >==========================-->
@@ -132,7 +133,7 @@
     <source path="dev/webfx/extras/visual/controls"/>
     <!--=======================< webfx-extras-visual-controls-grid >========================-->
     <!-- used by webfx-demo-enzoclocks-application (SOURCE) -->
-    <!-- used by webfx-extras-visual-controls-grid-peers-base (SOURCE) -->
+    <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
     <source path="dev/webfx/extras/visual/controls/grid"/>
     <!--==================< webfx-extras-visual-controls-grid-peers-gwt >===================-->
     <!-- used by webfx-demo-enzoclocks-application-gwt (IMPLICIT_PROVIDER) -->
@@ -176,7 +177,6 @@
     <source path="dev/webfx/kit/registry/javafxcontrols"/>
     <!--=========================< webfx-kit-javafxgraphics-peers >=========================-->
     <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
-    <!-- used by webfx-kit-javafxgraphics-registry-gwt (SOURCE) -->
     <source path="dev/webfx/kit/mapper/peers/javafxgraphics"/>
     <source path="dev/webfx/kit/mapper/peers/javafxgraphics/markers"/>
     <!--======================< webfx-kit-javafxgraphics-peers-base >=======================-->
@@ -185,9 +185,8 @@
     <source path="dev/webfx/kit/mapper/peers/javafxgraphics/base"/>
     <!--=======================< webfx-kit-javafxgraphics-peers-gwt >=======================-->
     <!-- used by webfx-extras-visual-controls-grid-peers-gwt (SOURCE) -->
-    <!-- used by webfx-extras-webtext-controls-peers-gwt (SOURCE) -->
     <!-- used by webfx-kit-gwt (SOURCE) -->
-    <!-- used by webfx-kit-javafxcontrols-registry-gwt (SOURCE) -->
+    <!-- used by webfx-kit-javafxcontrols-peers-gwt (SOURCE) -->
     <!-- used by webfx-kit-javafxgraphics-registry-gwt (SOURCE) -->
     <source path="dev/webfx/kit/mapper/peers/javafxgraphics/gwt/html"/>
     <source path="dev/webfx/kit/mapper/peers/javafxgraphics/gwt/html/layoutmeasurable"/>
@@ -216,7 +215,7 @@
     <resource path="eu/hansolo/enzo/clock"/>
     <public includes="eu/hansolo/enzo/clock/" path=""/>
     <!--=======================< webfx-platform-client-uischeduler >========================-->
-    <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
+    <!-- used by webfx-kit-launcher (SOURCE) -->
     <!-- used by webfx-platform-gwt-uischeduler-impl (SOURCE) -->
     <source path="dev/webfx/platform/client/services/uischeduler"/>
     <source path="dev/webfx/platform/client/services/uischeduler/spi"/>
@@ -266,6 +265,7 @@
     <source path="dev/webfx/platform/shared/services/shutdown/spi"/>
     <source path="dev/webfx/platform/shared/services/shutdown/spi/impl"/>
     <!--===========================< webfx-platform-shared-util >===========================-->
+    <!-- used by webfx-kit-javafxgraphics-peers (SOURCE) -->
     <!-- used by webfx-platform-shared-log (SOURCE) -->
     <!-- used by webfx-platform-shared-scheduler (SOURCE) -->
     <!-- used by webfx-platform-shared-shutdown (SOURCE) -->
