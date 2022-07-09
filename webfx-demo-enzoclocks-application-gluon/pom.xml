@@ -13,6 +13,8 @@
 
     <artifactId>webfx-demo-enzoclocks-application-gluon</artifactId>
 
+    <name>WebFXDemoEnzoclocks</name>
+
     <dependencies>
 
         <dependency>

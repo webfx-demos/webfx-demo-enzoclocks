@@ -99,7 +99,6 @@
     <inherits name="com.google.gwt.user.User"/>
     <!--=================================< java-nio-emul >==================================-->
     <!-- used by webfx-kit-javafxgraphics-emul (SOURCE) -->
-    <!-- used by webfx-platform-gwt-emul-javabase (SOURCE) -->
     <inherits name="org.gwtproject.nio.GwtNioSupport"/>
     <!--=======================< webfx-demo-enzoclocks-application >========================-->
     <!-- used by webfx-demo-enzoclocks-application-gwt (APPLICATION) -->

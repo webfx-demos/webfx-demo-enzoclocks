@@ -78,8 +78,8 @@
     </dependencies>
 
     <properties>
-        <plugin.javapackager.name>webfx-demo-enzoclocks</plugin.javapackager.name>
-        <plugin.javapackager.displayName>webfx-demo-enzoclocks</plugin.javapackager.displayName>
+        <plugin.javapackager.name>WebFXDemoEnzoclocks</plugin.javapackager.name>
+        <plugin.javapackager.displayName>WebFX Demo Enzoclocks</plugin.javapackager.displayName>
         <plugin.javapackager.url/>
     </properties>
 
