@@ -6,7 +6,7 @@
     </exported-packages>
 
     <providers>
-        <javafx.application.Application>dev.webfx.demo.enzoclocks.EnzoClocksApplication</javafx.application.Application>
+        <provider interface="javafx.application.Application">dev.webfx.demo.enzoclocks.EnzoClocksApplication</provider>
     </providers>
 
     <dependencies>
