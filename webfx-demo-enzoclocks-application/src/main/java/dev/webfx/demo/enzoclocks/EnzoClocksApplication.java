@@ -33,7 +33,7 @@ import dev.webfx.demo.enzoclocks.circlespacker.CirclesPackerPane;
 import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
-import dev.webfx.platform.client.services.uischeduler.UiScheduler;
+import dev.webfx.platform.uischeduler.UiScheduler;
 
 import java.time.LocalTime;
 import java.util.ArrayList;

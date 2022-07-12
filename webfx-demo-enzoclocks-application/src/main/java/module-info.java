@@ -12,7 +12,7 @@ module webfx.demo.enzoclocks.application {
     requires webfx.extras.visual.controls.grid;
     requires webfx.kit.util;
     requires webfx.lib.enzo;
-    requires webfx.platform.client.uischeduler;
+    requires webfx.platform.uischeduler;
 
     // Exported packages
     exports dev.webfx.demo.enzoclocks;
