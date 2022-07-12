@@ -95,7 +95,7 @@ public final class CirclesPackerPane extends Pane {
                 getChildren().removeAll(reintroducedNodes);
                 reintroducedNodes.clear();
             });
-            // Postponing the play so that the animation starts after all properties changes have been processed by WebFx
+            // Postponing the play so that the animation starts after all properties changes have been processed by WebFX
             Platform.runLater(timeline::play);
         }
         getChildren().addAll(recentlyRemovedNodes);

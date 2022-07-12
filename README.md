@@ -12,13 +12,13 @@ You can clock on the gear icon to change the global settings (ex: background).
 
 ## Reusability
 
-This demo demonstrates how you can reuse existing libraries written in JavaFx in a WebFx application.
-Here, it is using [Enzo][hansolo-enzo-link], a JavaFx library which implements many controls, and in particular this clock control with 4 different designs.
+This demo demonstrates how you can reuse existing libraries written in JavaFX in a WebFX application.
+Here, it is using [Enzo][hansolo-enzo-link], a JavaFX library which implements many controls, and in particular this clock control with 4 different designs.
 The flip effect when clicking on a clock to display the settings on its back is also taken from this library.
 
 ## Responsive design
 
-JavaFx has a great feature to implement responsive design in your application (as already described in this [previous demo][demo-responsive-link]).
+JavaFX has a great feature to implement responsive design in your application (as already described in this [previous demo][demo-responsive-link]).
 
 For example, this demo layouts the clocks according to the window width & height using a circles packer algorithm,
 a performance that is not achievable with a standard responsive design approach based on CSS rules. 
