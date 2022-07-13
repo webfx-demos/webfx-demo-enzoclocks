@@ -22,7 +22,7 @@ import dev.webfx.extras.visual.VisualResultBuilder;
 import dev.webfx.extras.visual.VisualStyle;
 import dev.webfx.extras.visual.controls.grid.SkinnedVisualGrid;
 import dev.webfx.extras.visual.controls.grid.VisualGrid;
-import dev.webfx.kit.util.properties.Properties;
+import dev.webfx.kit.util.properties.FXProperties;
 
 import java.time.Instant;
 import java.time.LocalTime;
@@ -45,8 +45,7 @@ public class ClockSetting {
 
     private ZoneId zoneId;
     private String text;
-    private Clock.Design design;
-    private boolean discreteSecond;
+    private final boolean discreteSecond;
     private final Clock clock;
     private Parent container;
     private Runnable onRemoveRequested;
@@ -58,7 +57,6 @@ public class ClockSetting {
     public ClockSetting(ZoneId zoneId, String text, Clock.Design design) {
         this.zoneId = zoneId;
         this.text = text;
-        this.design = design;
         discreteSecond = true;
         clock = ClockBuilder.create()
                 .design(design)
@@ -230,7 +228,7 @@ public class ClockSetting {
         // etc...). Also this makes the hand cursor visible only on the circle which is pretty good.
         Circle clip = new Circle();
         fp.setClip(clip);
-        Properties.runOnPropertiesChange(() -> {
+        FXProperties.runOnPropertiesChange(() -> {
             double radius = fp.getWidth() / 2;
             clip.setRadius(radius);
             clip.setCenterX(radius);
