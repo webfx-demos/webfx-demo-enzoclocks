@@ -75,7 +75,6 @@
     <inherits name="org.gwtproject.nio.GwtNioSupport"/>
     <!--=======================< webfx-demo-enzoclocks-application >========================-->
     <source path="dev/webfx/demo/enzoclocks"/>
-    <source path="dev/webfx/demo/enzoclocks/circlespacker"/>
     <source path="dev/webfx/demo/enzoclocks/settings"/>
     <!--===============================< webfx-extras-cell >================================-->
     <source path="dev/webfx/extras/cell/collator"/>
@@ -139,6 +138,8 @@
     <!--=================================< webfx-kit-util >=================================-->
     <source path="dev/webfx/kit/util/properties"/>
     <source path="dev/webfx/kit/util/properties/conversion"/>
+    <!--============================< webfx-lib-circlespacker >=============================-->
+    <source path="dev/webfx/lib/circlespacker"/>
     <!--=================================< webfx-lib-enzo >=================================-->
     <source path="eu/hansolo/enzo/clock"/>
     <source path="eu/hansolo/enzo/clock/skin"/>

@@ -29,7 +29,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
-import dev.webfx.demo.enzoclocks.circlespacker.CirclesPackerPane;
+import dev.webfx.lib.circlespacker.CirclesPackerPane;
 import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
