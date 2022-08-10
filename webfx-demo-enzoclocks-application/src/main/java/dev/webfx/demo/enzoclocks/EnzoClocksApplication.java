@@ -44,7 +44,7 @@ import java.util.List;
 public final class EnzoClocksApplication extends Application {
 
     private final List<ClockSetting> clockSettings = new ArrayList<>();
-    private final CirclesPackerPane circlesPackerPane = new CirclesPackerPane();
+    private final CirclesPackerPane circlesPackerPane = new CirclesPackerPane(true);
 
     @Override
     public void start(Stage stage) {
