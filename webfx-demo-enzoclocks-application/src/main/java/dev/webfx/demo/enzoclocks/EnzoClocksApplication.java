@@ -16,6 +16,7 @@
 
 package dev.webfx.demo.enzoclocks;
 
+import dev.webfx.extras.led.PlusLed;
 import eu.hansolo.enzo.clock.Clock;
 import javafx.application.Application;
 import javafx.geometry.Bounds;
@@ -55,16 +56,16 @@ public final class EnzoClocksApplication extends Application {
                 new ClockSetting("Australia/Sydney", null, Clock.Design.BRAUN)
         );
         Insets buttonsMargin = new Insets(10);
-        PlusButton plusButton = new PlusButton(Color.GREEN.brighter());
-        plusButton.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings)));
-        plusButton.setMaxSize(100, 100);
-        StackPane.setAlignment(plusButton, Pos.BOTTOM_RIGHT);
-        StackPane.setMargin(plusButton, buttonsMargin);
+        PlusLed plusLed = new PlusLed(Color.GREEN.brighter());
+        plusLed.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings)));
+        plusLed.setMaxSize(100, 100);
+        StackPane.setAlignment(plusLed, Pos.BOTTOM_RIGHT);
+        StackPane.setMargin(plusLed, buttonsMargin);
         Pane gearPane = createSVGButton(SvgButtonPaths.getGearPath(), Color.GRAY);
         gearPane.setCursor(Cursor.HAND);
         StackPane.setAlignment(gearPane, Pos.BOTTOM_LEFT);
         StackPane.setMargin(gearPane, buttonsMargin);
-        Pane root = new StackPane(circlesPackerPane, plusButton, gearPane);
+        Pane root = new StackPane(circlesPackerPane, plusLed, gearPane);
         BackgroundMenuPane backgroundMenuPane = new BackgroundMenuPane(root);
         gearPane.setOnMouseClicked(e -> root.getChildren().add(backgroundMenuPane));
 

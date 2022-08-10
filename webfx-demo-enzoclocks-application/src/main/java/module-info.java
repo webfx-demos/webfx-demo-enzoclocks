@@ -4,9 +4,9 @@ module webfx.demo.enzoclocks.application {
 
     // Direct dependencies modules
     requires java.base;
-    requires javafx.base;
     requires javafx.controls;
     requires javafx.graphics;
+    requires webfx.extras.led;
     requires webfx.extras.type;
     requires webfx.extras.visual;
     requires webfx.extras.visual.grid;
