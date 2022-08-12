@@ -30,7 +30,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
-import dev.webfx.lib.circlespacker.CirclesPackerPane;
+import dev.webfx.lib.circlepacking.CirclePackingPane;
 import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
@@ -45,7 +45,7 @@ import java.util.List;
 public final class EnzoClocksApplication extends Application {
 
     private final List<ClockSetting> clockSettings = new ArrayList<>();
-    private final CirclesPackerPane circlesPackerPane = new CirclesPackerPane(true);
+    private final CirclePackingPane circlePackingPane = new CirclePackingPane(true);
 
     @Override
     public void start(Stage stage) {
@@ -65,7 +65,7 @@ public final class EnzoClocksApplication extends Application {
         gearPane.setCursor(Cursor.HAND);
         StackPane.setAlignment(gearPane, Pos.BOTTOM_LEFT);
         StackPane.setMargin(gearPane, buttonsMargin);
-        Pane root = new StackPane(circlesPackerPane, plusLed, gearPane);
+        Pane root = new StackPane(circlePackingPane, plusLed, gearPane);
         BackgroundMenuPane backgroundMenuPane = new BackgroundMenuPane(root);
         gearPane.setOnMouseClicked(e -> root.getChildren().add(backgroundMenuPane));
 
@@ -119,10 +119,10 @@ public final class EnzoClocksApplication extends Application {
 
     private void addClock(ClockSetting clockSetting) {
         clockSettings.add(clockSetting);
-        circlesPackerPane.getChildren().add(clockSetting.embedClock());
+        circlePackingPane.getChildren().add(clockSetting.embedClock());
         clockSetting.setOnRemoveRequested(() -> {
             clockSettings.remove(clockSetting);
-            circlesPackerPane.getChildren().remove(clockSetting.getContainer());
+            circlePackingPane.getChildren().remove(clockSetting.getContainer());
         });
     }
 }

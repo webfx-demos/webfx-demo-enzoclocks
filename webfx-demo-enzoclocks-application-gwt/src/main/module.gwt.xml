@@ -140,7 +140,7 @@
     <!--=================================< webfx-kit-util >=================================-->
     <source path="dev/webfx/kit/util/properties"/>
     <source path="dev/webfx/kit/util/properties/conversion"/>
-    <!--============================< webfx-lib-circlespacker >=============================-->
+    <!--============================< webfx-lib-circlepacking >=============================-->
     <source path="dev/webfx/lib/circlespacker"/>
     <!--=================================< webfx-lib-enzo >=================================-->
     <source path="eu/hansolo/enzo/clock"/>

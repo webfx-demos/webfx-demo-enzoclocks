@@ -11,7 +11,7 @@ module webfx.demo.enzoclocks.application {
     requires webfx.extras.visual;
     requires webfx.extras.visual.grid;
     requires webfx.kit.util;
-    requires webfx.lib.circlespacker;
+    requires webfx.lib.circlepacking;
     requires webfx.lib.enzo;
     requires webfx.platform.uischeduler;
 
