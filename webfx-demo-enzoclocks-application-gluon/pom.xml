@@ -96,6 +96,8 @@
                     </attachList>
                     <resourcesList>
                         <list>dev/webfx/platform/meta/exe/[^/]+</list>
+                        <list>eu/hansolo/enzo/clock/[^/]+</list>
+                        <list>images/checkbox/[^/]+</list>
                     </resourcesList>
                 </configuration>
             </plugin>
