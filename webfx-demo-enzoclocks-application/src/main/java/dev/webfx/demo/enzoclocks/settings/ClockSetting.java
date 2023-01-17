@@ -45,10 +45,10 @@ public class ClockSetting {
 
     private ZoneId zoneId;
     private String text;
-    private final boolean discreteSecond;
     private final Clock clock;
     private Parent container;
     private Runnable onRemoveRequested;
+    private Runnable onStateChanged;
 
     public ClockSetting(String zoneName, String text, Clock.Design design) {
         this(ZoneId.of(zoneName), text, design);
@@ -57,12 +57,11 @@ public class ClockSetting {
     public ClockSetting(ZoneId zoneId, String text, Clock.Design design) {
         this.zoneId = zoneId;
         this.text = text;
-        discreteSecond = true;
         clock = ClockBuilder.create()
                 .design(design)
                 .text(text != null ? text : zoneShortName(zoneId.getId()))
                 .autoNightMode(true)
-                .discreteSecond(discreteSecond)
+                .discreteSecond(true)
                 .time(LocalTime.now(zoneId))
                 .build();
     }
@@ -98,13 +97,27 @@ public class ClockSetting {
         this.onRemoveRequested = onRemoveRequested;
     }
 
+    public void setOnStateChanged(Runnable onStateChanged) {
+        this.onStateChanged = onStateChanged;
+    }
+
+    private void fireRemoved() {
+        if (onRemoveRequested != null)
+            onRemoveRequested.run();
+    }
+
+    private void fireStateChanged() {
+        if (onStateChanged != null)
+            onStateChanged.run();
+    }
+
     private Clock createDesignSelectorClock(Clock.Design d) {
         Clock designSelectorClock = new ClockSetting(zoneId, text, d).clock;
         designSelectorClock.timeProperty().bind(clock.timeProperty());
         designSelectorClock.setCursor(Cursor.HAND);
         designSelectorClock.setOnMouseClicked(e -> {
             clock.setDesign(d);
-            clock.setDiscreteSecond(discreteSecond);
+            clock.setDiscreteSecond(true);
             Pane root = (Pane) clock.getScene().getRoot();
             root.getChildren().remove(root.getChildren().size() - 1);
 /*
@@ -166,6 +179,7 @@ public class ClockSetting {
             double y = e.getY() - yc;
             if (x * x + y * y < xc * yc / 8) { // central zone (closed to Ok)
                 fp.flipToFront();
+                fireStateChanged();
             } else if (x <= 0 && y < 0) { // left top corner => time zone
                 Pane root = (Pane) fp.getScene().getRoot();
                 VisualGrid grid = new SkinnedVisualGrid();
@@ -206,13 +220,12 @@ public class ClockSetting {
                 gridPane.setSquare(true);
                 root.getChildren().add(gridPane);
             } else { // right bottom corner => remove
-                if (onRemoveRequested != null)
-                    onRemoveRequested.run();
+                fireRemoved();
             }
         });
         clock.setOnMouseClicked(e -> {
             if (e.isControlDown() && onRemoveRequested != null)
-                onRemoveRequested.run();
+                fireRemoved();
             else {
                 updateBack(back);
                 fp.flipToBack();

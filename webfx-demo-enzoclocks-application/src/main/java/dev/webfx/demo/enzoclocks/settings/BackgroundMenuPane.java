@@ -1,5 +1,7 @@
 package dev.webfx.demo.enzoclocks.settings;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.Cursor;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -35,17 +37,27 @@ public class BackgroundMenuPane extends ResponsiveGridPane {
             "to bottom right, #22c1c3, #fdbb2d", // Summer
     };
 
+    private final Pane root;
+    private StringProperty rootBackgroundGradientProperty = new SimpleStringProperty() {
+        @Override
+        protected void invalidated() {
+            applyBackgroundGradient(root, get());
+        }
+    };
+
     public BackgroundMenuPane(Pane root) {
-        applyBackgroundGradient(root, 0);
+        this.root = root;
+        rootBackgroundGradientProperty.set(BACKGROUND_GRADIENTS[0]);
         int n = BACKGROUND_GRADIENTS.length;
         Region[] backgroundThumbnails = new Region[n];
         for (int i = 0; i < n; i++) {
             Region thumbnail = new Region();
             int index = i;
-            applyBackgroundGradient(thumbnail, index);
+            String backgroundGradient = BACKGROUND_GRADIENTS[index];
+            applyBackgroundGradient(thumbnail, backgroundGradient);
             thumbnail.setCursor(Cursor.HAND);
             thumbnail.setOnMouseClicked(e -> {
-                applyBackgroundGradient(root, index);
+                rootBackgroundGradientProperty.set(backgroundGradient);
                 root.getChildren().remove(this);
             });
             backgroundThumbnails[i] = thumbnail;
@@ -53,8 +65,20 @@ public class BackgroundMenuPane extends ResponsiveGridPane {
         getChildren().setAll(backgroundThumbnails);
     }
 
-    private static void applyBackgroundGradient(Region background, int index) {
-        background.setBackground(new Background(new BackgroundFill(LinearGradient.valueOf(BACKGROUND_GRADIENTS[index]), null, null)));
+    public String getRootBackgroundGradient() {
+        return rootBackgroundGradientProperty.get();
+    }
+
+    public void setRootBackgroundGradient(String backgroundGradient) {
+        rootBackgroundGradientProperty.set(backgroundGradient);
+    }
+
+    public StringProperty rootBackgroundGradientProperty() {
+        return rootBackgroundGradientProperty;
+    }
+
+    private static void applyBackgroundGradient(Region background, String gradient) {
+        background.setBackground(new Background(new BackgroundFill(LinearGradient.valueOf(gradient), null, null)));
     }
 
 }

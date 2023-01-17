@@ -16,7 +16,13 @@
 
 package dev.webfx.demo.enzoclocks;
 
+import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
+import dev.webfx.demo.enzoclocks.settings.ClockSetting;
+import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
 import dev.webfx.extras.led.PlusLed;
+import dev.webfx.lib.circlepacking.CirclePackingPane;
+import dev.webfx.platform.storage.LocalStorage;
+import dev.webfx.platform.uischeduler.UiScheduler;
 import eu.hansolo.enzo.clock.Clock;
 import javafx.application.Application;
 import javafx.geometry.Bounds;
@@ -30,16 +36,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
-import dev.webfx.lib.circlepacking.CirclePackingPane;
-import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
-import dev.webfx.demo.enzoclocks.settings.ClockSetting;
-import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
-import dev.webfx.platform.uischeduler.UiScheduler;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public final class EnzoClocksApplication extends Application {
@@ -47,17 +49,13 @@ public final class EnzoClocksApplication extends Application {
     private final List<ClockSetting> clockSettings = new ArrayList<>();
     private final CirclePackingPane circlePackingPane = new CirclePackingPane(true);
 
+    private BackgroundMenuPane backgroundMenuPane;
+
     @Override
     public void start(Stage stage) {
-        addClocks(
-                new ClockSetting("America/Los_Angeles", "San Francisco", Clock.Design.BOSCH),
-                new ClockSetting("America/New_York", null, Clock.Design.IOS6),
-                new ClockSetting("Europe/Berlin", null, Clock.Design.DB),
-                new ClockSetting("Australia/Sydney", null, Clock.Design.BRAUN)
-        );
         Insets buttonsMargin = new Insets(10);
         PlusLed plusLed = new PlusLed(Color.GREEN.brighter());
-        plusLed.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings)));
+        plusLed.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings), true));
         plusLed.setMaxSize(100, 100);
         StackPane.setAlignment(plusLed, Pos.BOTTOM_RIGHT);
         StackPane.setMargin(plusLed, buttonsMargin);
@@ -66,7 +64,7 @@ public final class EnzoClocksApplication extends Application {
         StackPane.setAlignment(gearPane, Pos.BOTTOM_LEFT);
         StackPane.setMargin(gearPane, buttonsMargin);
         Pane root = new StackPane(circlePackingPane, plusLed, gearPane);
-        BackgroundMenuPane backgroundMenuPane = new BackgroundMenuPane(root);
+        backgroundMenuPane = new BackgroundMenuPane(root);
         gearPane.setOnMouseClicked(e -> root.getChildren().add(backgroundMenuPane));
 
         updateClockTimes();
@@ -77,6 +75,9 @@ public final class EnzoClocksApplication extends Application {
         stage.setTitle("Enzo Clocks");
         stage.setScene(scene);
         stage.show();
+
+        loadState();
+        backgroundMenuPane.rootBackgroundGradientProperty().addListener((observable, oldValue, newValue) -> saveState());
     }
 
     private Pane createSVGButton(String svgPath, Paint fill) {
@@ -114,15 +115,47 @@ public final class EnzoClocksApplication extends Application {
     }
 
     private void addClocks(ClockSetting... clockSettings) {
-        Arrays.stream(clockSettings).forEach(this::addClock);
+        Arrays.stream(clockSettings).forEach(cs -> addClock(cs, false));
     }
 
-    private void addClock(ClockSetting clockSetting) {
+    private void addClock(ClockSetting clockSetting, boolean save) {
         clockSettings.add(clockSetting);
         circlePackingPane.getChildren().add(clockSetting.embedClock());
         clockSetting.setOnRemoveRequested(() -> {
             clockSettings.remove(clockSetting);
             circlePackingPane.getChildren().remove(clockSetting.getContainer());
+            saveState();
         });
+        clockSetting.setOnStateChanged(this::saveState);
+        if (save)
+            saveState();
+    }
+
+    private void loadState() {
+        String clocks = LocalStorage.getItem("clocks");
+        if (clocks == null)
+            addClocks(
+                    new ClockSetting("America/Los_Angeles", "San Francisco", Clock.Design.BOSCH),
+                    new ClockSetting("America/New_York", null, Clock.Design.IOS6),
+                    new ClockSetting("Europe/Berlin", null, Clock.Design.DB),
+                    new ClockSetting("Australia/Sydney", null, Clock.Design.BRAUN)
+            );
+        else {
+            for (String clock : clocks.split(",")) {
+                String[] token = clock.substring(1, clock.length() - 1).split(":");
+                addClock(new ClockSetting(token[0], token[2], Clock.Design.valueOf(token[1])), false);
+            }
+        }
+        String background = LocalStorage.getItem("background");
+        if (background != null)
+            backgroundMenuPane.setRootBackgroundGradient(background);
+    }
+
+    private void saveState() {
+        String clocks = clockSettings.stream()
+            .map(cs -> "{" + cs.getZoneId() + ":" + cs.getClock().getDesign() + ":" + cs.getClock().getText() + "}")
+                .collect(Collectors.joining(","));
+        LocalStorage.setItem("clocks", clocks);
+        LocalStorage.setItem("background", backgroundMenuPane.getRootBackgroundGradient());
     }
 }

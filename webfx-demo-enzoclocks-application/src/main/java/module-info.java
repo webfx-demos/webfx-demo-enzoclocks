@@ -13,6 +13,7 @@ module webfx.demo.enzoclocks.application {
     requires webfx.kit.util;
     requires webfx.lib.circlepacking;
     requires webfx.lib.enzo;
+    requires webfx.platform.storage;
     requires webfx.platform.uischeduler;
 
     // Exported packages
