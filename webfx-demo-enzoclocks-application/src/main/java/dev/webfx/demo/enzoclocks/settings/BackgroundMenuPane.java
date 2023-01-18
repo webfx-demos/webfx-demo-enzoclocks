@@ -38,7 +38,7 @@ public class BackgroundMenuPane extends ResponsiveGridPane {
     };
 
     private final Pane root;
-    private StringProperty rootBackgroundGradientProperty = new SimpleStringProperty() {
+    private final StringProperty rootBackgroundGradientProperty = new SimpleStringProperty() {
         @Override
         protected void invalidated() {
             applyBackgroundGradient(root, get());
