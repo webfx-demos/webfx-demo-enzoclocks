@@ -118,6 +118,7 @@
                         <list>eu/hansolo/enzo/clock/[^/]+$</list>
                         <list>images/checkbox/[^/]+$</list>
                     </resourcesList>
+                    <appIdentifier>dev.webfx.demo.enzoclocks</appIdentifier>
                     <releaseConfiguration>
                         <!-- Android -->
                         <appLabel>Enzo clocks</appLabel>
