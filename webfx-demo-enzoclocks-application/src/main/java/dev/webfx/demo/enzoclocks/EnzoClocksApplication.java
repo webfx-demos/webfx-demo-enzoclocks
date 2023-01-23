@@ -20,6 +20,7 @@ import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
 import dev.webfx.extras.led.PlusLed;
+import dev.webfx.kit.util.scene.DeviceSceneUtil;
 import dev.webfx.lib.circlepacking.CirclePackingPane;
 import dev.webfx.platform.storage.LocalStorage;
 import dev.webfx.platform.uischeduler.UiScheduler;
@@ -70,7 +71,7 @@ public final class EnzoClocksApplication extends Application {
         updateClockTimes();
         UiScheduler.schedulePeriodic(20, this::updateClockTimes);
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = DeviceSceneUtil.newScene(root,800, 600);
         //scene.getStylesheets().add(ResourceService.toUrl("/eu/hansolo/enzo/clock/clock.css", getClass()));
         stage.setTitle("Enzo Clocks");
         stage.setScene(scene);
