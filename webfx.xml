@@ -9,7 +9,7 @@
         <group>
             <groupId>dev.webfx</groupId>
             <version>0.1.0-SNAPSHOT</version>
-            <webfx-library name="webfx-extras-private"/>
+            <webfx-library name="webfx-extras-private"/> <!-- Led -->
             <webfx-library name="webfx-lib-enzo"/>
             <webfx-library name="webfx-lib-circlepacking"/>
         </group>
