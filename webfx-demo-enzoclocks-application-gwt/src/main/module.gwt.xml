@@ -90,6 +90,8 @@
     <source path="dev/webfx/extras/label"/>
     <!--================================< webfx-extras-led >================================-->
     <source path="dev/webfx/extras/led"/>
+    <!--=============================< webfx-extras-scalepane >=============================-->
+    <source path="dev/webfx/extras/scalepane"/>
     <!--===============================< webfx-extras-type >================================-->
     <source path="dev/webfx/extras/type"/>
     <!--==============================< webfx-extras-visual >===============================-->

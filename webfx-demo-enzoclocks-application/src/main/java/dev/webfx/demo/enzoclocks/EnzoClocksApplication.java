@@ -1,32 +1,17 @@
-/*
- * Copyright (c) 2015 by Gerrit Grunwald
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package dev.webfx.demo.enzoclocks;
 
 import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
 import dev.webfx.extras.led.PlusLed;
+import dev.webfx.extras.scalepane.ScalePane;
+import dev.webfx.kit.util.properties.FXProperties;
 import dev.webfx.kit.util.scene.DeviceSceneUtil;
 import dev.webfx.lib.circlepacking.CirclePackingPane;
 import dev.webfx.platform.storage.LocalStorage;
 import dev.webfx.platform.uischeduler.UiScheduler;
 import eu.hansolo.enzo.clock.Clock;
 import javafx.application.Application;
-import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
@@ -44,7 +29,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * @author Bruno Salmon
+ */
 public final class EnzoClocksApplication extends Application {
 
     private final List<ClockSetting> clockSettings = new ArrayList<>();
@@ -54,31 +41,48 @@ public final class EnzoClocksApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        Insets buttonsMargin = new Insets(10);
+        // Creating plus button
         PlusLed plusLed = new PlusLed(Color.GREEN.brighter());
-        plusLed.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings), true));
-        plusLed.setMaxSize(100, 100);
         StackPane.setAlignment(plusLed, Pos.BOTTOM_RIGHT);
-        StackPane.setMargin(plusLed, buttonsMargin);
+
+        // Creating gear button
         Pane gearPane = createSVGButton(SvgButtonPaths.getGearPath(), Color.GRAY);
-        gearPane.setCursor(Cursor.HAND);
         StackPane.setAlignment(gearPane, Pos.BOTTOM_LEFT);
-        StackPane.setMargin(gearPane, buttonsMargin);
+
+        // Creating root node
         Pane root = new StackPane(circlePackingPane, plusLed, gearPane);
         backgroundMenuPane = new BackgroundMenuPane(root);
-        gearPane.setOnMouseClicked(e -> root.getChildren().add(backgroundMenuPane));
 
-        updateClockTimes();
-        UiScheduler.schedulePeriodic(20, this::updateClockTimes);
-
+        // Creating scene
         Scene scene = DeviceSceneUtil.newScene(root,800, 600);
-        //scene.getStylesheets().add(ResourceService.toUrl("/eu/hansolo/enzo/clock/clock.css", getClass()));
         stage.setTitle("Enzo Clocks");
         stage.setScene(scene);
         stage.show();
 
+        // Loading state
         loadState();
+        // Saving background when changed
         backgroundMenuPane.rootBackgroundGradientProperty().addListener((observable, oldValue, newValue) -> saveState());
+
+        // Setting action handlers for the buttons
+        plusLed.setOnAction(e -> addClock(ClockSetting.createRandom(clockSettings), true));
+        gearPane.setOnMouseClicked(e -> root.getChildren().add(backgroundMenuPane));
+        gearPane.setCursor(Cursor.HAND);
+
+        // Resizing the buttons (percentage of scene dimensions)
+        FXProperties.runNowAndOnPropertiesChange(() -> {
+            double buttonSize = 0.08 * Math.min(stage.getWidth(), stage.getHeight());
+            plusLed.setMaxSize(buttonSize, buttonSize);
+            gearPane.setMaxSize(buttonSize, buttonSize);
+            // Also their margin
+            Insets buttonsMargin = new Insets(buttonSize / 10);
+            StackPane.setMargin(plusLed, buttonsMargin);
+            StackPane.setMargin(gearPane, buttonsMargin);
+        }, scene.widthProperty(), scene.heightProperty());
+
+        // Setting up the periodic clock timer
+        updateClockTimes();
+        UiScheduler.schedulePeriodic(20, this::updateClockTimes);
     }
 
     private Pane createSVGButton(String svgPath, Paint fill) {
@@ -89,12 +93,7 @@ public final class EnzoClocksApplication extends Application {
         // the browser), the clicking area is only the filled shape, not the empty space in that shape. So when clicking
         // on a gear icon on a mobile for example, even if globally our finger covers the icon, the final click point
         // may be in this empty space, making the button not reacting, leading to a frustrating experience.
-        Pane pane = new Pane(path); // Will act as the mouse click area covering the entire surface
-        // The pane needs to be reduced to the svg path size (which we can get using the layout bounds).
-        path.sceneProperty().addListener((observableValue, scene, t1) -> { // This postpone is necessary only when running in the browser, not in standard JavaFX
-            Bounds b = path.getLayoutBounds(); // Bounds computation should be correct now even in the browser
-            pane.setMaxSize(b.getWidth(), b.getHeight());
-        });
+        Pane pane = new ScalePane(path); // Will act as the mouse click area covering the entire surface
         pane.setCursor(Cursor.HAND);
         return pane;
     }
