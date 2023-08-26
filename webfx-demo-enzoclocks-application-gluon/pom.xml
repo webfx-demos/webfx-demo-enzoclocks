@@ -123,10 +123,12 @@
                     <resourcesList>
                         <list>dev/webfx/platform/meta/exe/[^/]+$</list>
                         <list>eu/hansolo/enzo/clock/[^/]+$</list>
-                        <list>images/checkbox/[^/]+$</list>
+                        <list>javafx/scene/control/skin/checkbox/[^/]+$</list>
                     </resourcesList>
                     <appIdentifier>dev.webfx.demo.enzoclocks</appIdentifier>
                     <releaseConfiguration>
+                        <!-- macOS/iOS -->
+                        <bundleName>Enzo clocks</bundleName>
                         <!-- Android -->
                         <appLabel>Enzo clocks</appLabel>
                     </releaseConfiguration>
