@@ -17,7 +17,4 @@ module webfx.demo.enzoclocks.application.gluon {
     requires webfx.platform.storagelocation.gluon;
     requires webfx.platform.visibility.gluon;
 
-    // Resources packages
-    opens dev.webfx.platform.meta.exe;
-
 }

@@ -4,6 +4,7 @@ module webfx.demo.enzoclocks.application.openjfx {
 
     // Direct dependencies modules
     requires webfx.demo.enzoclocks.application;
+    requires webfx.extras.visual.grid.peers.openjfx;
     requires webfx.extras.webtext.peers.openjfx;
     requires webfx.kit.openjfx;
     requires webfx.kit.platform.visibility.openjfx;
@@ -15,8 +16,5 @@ module webfx.demo.enzoclocks.application.openjfx {
     requires webfx.platform.shutdown.java;
     requires webfx.platform.storage.java;
     requires webfx.platform.storagelocation.java;
-
-    // Resources packages
-    opens dev.webfx.platform.meta.exe;
 
 }
