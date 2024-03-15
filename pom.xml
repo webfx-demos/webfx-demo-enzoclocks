@@ -36,6 +36,7 @@
         <module>webfx-demo-enzoclocks-application</module>
         <module>webfx-demo-enzoclocks-application-gluon</module>
         <module>webfx-demo-enzoclocks-application-gwt</module>
+        <module>webfx-demo-enzoclocks-application-j2cl</module>
         <module>webfx-demo-enzoclocks-application-openjfx</module>
     </modules>
 

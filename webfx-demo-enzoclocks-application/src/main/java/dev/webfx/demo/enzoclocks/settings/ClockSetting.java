@@ -264,7 +264,13 @@ public class ClockSetting {
     }
 
     private Text[] createLetters(String text,  Paint fill) {
-        return text.chars().mapToObj(c -> createText("" + (char) c, fill)).toArray(Text[]::new);
+        // Commented as not J2CL compatible
+        //return text.chars().mapToObj(c -> createText("" + (char) c, fill)).toArray(Text[]::new);
+        Text[] letters = new Text[text.length()];
+        for (int i = 0; i < letters.length; i++) {
+            letters[i] = createText("" + text.charAt(i), fill);
+        }
+        return letters;
     }
 
     private void updateBack(Pane back) {

@@ -4,7 +4,7 @@ import dev.webfx.demo.enzoclocks.settings.BackgroundMenuPane;
 import dev.webfx.demo.enzoclocks.settings.ClockSetting;
 import dev.webfx.demo.enzoclocks.settings.SvgButtonPaths;
 import dev.webfx.extras.led.PlusLed;
-import dev.webfx.extras.scalepane.ScalePane;
+import dev.webfx.extras.panes.ScalePane;
 import dev.webfx.kit.util.properties.FXProperties;
 import dev.webfx.kit.util.scene.DeviceSceneUtil;
 import dev.webfx.lib.circlepacking.CirclePackingPane;
