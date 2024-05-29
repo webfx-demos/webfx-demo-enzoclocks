@@ -1,11 +1,5 @@
 
-/*===== webtext-javafx@main.css from webfx-extras-webtext-peers-openjfx =====*/
-
-HtmlText, HtmlTextEditor {
-    -fx-skin: "dev.webfx.kit.mapper.peers.javafxcontrols.openjfx.skin.FxControlPeerSkin";
-}
-
-/*===== visual-grid-javafx@main.css from webfx-extras-visual-grid-peers-openjfx =====*/
+/*===== webfx-extras-visual-grid-javafx@main.css from webfx-extras-visual-grid-peers-openjfx =====*/
 
 VisualGrid {
     -fx-skin: "dev.webfx.kit.mapper.peers.javafxcontrols.openjfx.skin.FxControlPeerSkin";
@@ -59,4 +53,10 @@ VisualGrid {
 
 .table-row-cell:selected .table-cell {
    -fx-text-fill: -fx-text-inner-color;
+}
+
+/*===== webfx-extras-webtext-javafx@main.css from webfx-extras-webtext-peers-openjfx =====*/
+
+HtmlText, HtmlTextEditor {
+    -fx-skin: "dev.webfx.kit.mapper.peers.javafxcontrols.openjfx.skin.FxControlPeerSkin";
 }
