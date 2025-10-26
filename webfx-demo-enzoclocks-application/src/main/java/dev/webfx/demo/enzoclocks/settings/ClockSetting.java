@@ -8,6 +8,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -20,7 +21,6 @@ import dev.webfx.extras.visual.SelectionMode;
 import dev.webfx.extras.visual.VisualColumn;
 import dev.webfx.extras.visual.VisualResultBuilder;
 import dev.webfx.extras.visual.VisualStyle;
-import dev.webfx.extras.visual.controls.grid.SkinnedVisualGrid;
 import dev.webfx.extras.visual.controls.grid.VisualGrid;
 import dev.webfx.kit.util.properties.FXProperties;
 
@@ -182,7 +182,8 @@ public class ClockSetting {
                 fireStateChanged();
             } else if (x <= 0 && y < 0) { // left top corner => time zone
                 Pane root = (Pane) fp.getScene().getRoot();
-                VisualGrid grid = new SkinnedVisualGrid();
+                VisualGrid grid = VisualGrid.createVisualGridWithTableLayoutSkin();
+                grid.setBackground(Background.fill(Color.WHITE));
                 TextField searchField = new TextField();
                 searchField.setPromptText("Type here to narrow the list");
                 searchField.setAlignment(Pos.CENTER);
@@ -196,6 +197,10 @@ public class ClockSetting {
                     setZoneId(ZoneId.of(filteredZoneIds.get(t1.getSelectedRow())));
                     root.getChildren().remove(gridPane);
                     //fp.flipToFront();
+                });
+                grid.setOnKeyPressed(ke -> {
+                    if (ke.getCode() == KeyCode.ESCAPE)
+                        root.getChildren().remove(gridPane);
                 });
                 grid.setCursor(Cursor.HAND);
                 root.getChildren().add(gridPane);
@@ -238,7 +243,7 @@ public class ClockSetting {
         fp.setCursor(Cursor.HAND);
         // Even if there is no need visually (clock and back are already round), we add a clip to prevent any click
         // confusions between clocks - because the children nodes of a clock can overlap those of another (transforms,
-        // etc...). Also this makes the hand cursor visible only on the circle which is pretty good.
+        // etc...). Also, this makes the hand cursor visible only on the circle, which is pretty good.
         Circle clip = new Circle();
         fp.setClip(clip);
         FXProperties.runOnPropertiesChange(() -> {

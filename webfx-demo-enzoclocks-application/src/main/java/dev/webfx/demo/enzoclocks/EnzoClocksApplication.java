@@ -41,19 +41,19 @@ public final class EnzoClocksApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        // Creating plus button
+        // Creating the plus button
         PlusLed plusLed = new PlusLed(Color.GREEN.brighter());
         StackPane.setAlignment(plusLed, Pos.BOTTOM_RIGHT);
 
-        // Creating gear button
+        // Creating the gear button
         Pane gearPane = createSVGButton(SvgButtonPaths.getGearPath(), Color.GRAY);
         StackPane.setAlignment(gearPane, Pos.BOTTOM_LEFT);
 
-        // Creating root node
+        // Creating the root node
         Pane root = new StackPane(circlePackingPane, plusLed, gearPane);
         backgroundMenuPane = new BackgroundMenuPane(root);
 
-        // Creating scene
+        // Creating the scene
         Scene scene = DeviceSceneUtil.newScene(root,800, 600);
         stage.setTitle("Enzo Clocks");
         stage.setScene(scene);
@@ -91,8 +91,8 @@ public final class EnzoClocksApplication extends Application {
         path.setFill(fill);
         // We now embed the svg path in a pane. The reason is for a better click experience. Because in JavaFX (not in
         // the browser), the clicking area is only the filled shape, not the empty space in that shape. So when clicking
-        // on a gear icon on a mobile for example, even if globally our finger covers the icon, the final click point
-        // may be in this empty space, making the button not reacting, leading to a frustrating experience.
+        // on a gear icon on a mobile, for example, even if globally our finger covers the icon, the final click point
+        // may be in this empty space, making the button not reacting (frustrating experience).
         Pane pane = new ScalePane(path); // Will act as the mouse click area covering the entire surface
         pane.setCursor(Cursor.HAND);
         return pane;
