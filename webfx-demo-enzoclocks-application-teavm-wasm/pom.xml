@@ -131,7 +131,7 @@
                         <executions>
                             <execution>
                                 <id>unpack-resources-to-web</id>
-                                <phase>package</phase>
+                                <phase>${plugin.teavm.param.execution.compile.phase}</phase>
                                 <goals>
                                     <goal>unpack</goal>
                                 </goals>

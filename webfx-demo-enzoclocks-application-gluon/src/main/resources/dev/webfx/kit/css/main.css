@@ -1,4 +1,14 @@
 
+/*===== webfx-extras-controls-javafx@main.css from webfx-extras-util-control =====*/
+
+.root {
+    -fx-spinner-color: -fx-theme-color;
+}
+
+.webfx-extras-spinner {
+    -fx-fill: -fx-spinner-color;
+}
+
 /*===== webfx-extras-visual-grid-javafx@main.css from webfx-extras-visual-grid =====*/
 
 VisualGrid {
@@ -36,6 +46,18 @@ VisualGrid {
     -fx-padding: 1.4mm 1.4mm 0.6mm 1.4mm;
 }
 
+.table-row-cell:selected {
+    -fx-background: -webfx-visualgrid-selection-color;
+}
+
+.table-row-cell:selected .table-cell {
+   -fx-text-fill: -fx-text-inner-color;
+}
+
+/**************************
+*** VisualGridTableSkin ***
+**************************/
+
 .grid .scroll-pane {
     -fx-padding: 0;
 }
@@ -50,12 +72,8 @@ VisualGrid {
     -fx-border-width: 0 1px 0 0;
 }
 
-.table-row-cell:selected {
-    -fx-background: -webfx-visualgrid-selection-color;
-}
-
-.table-row-cell:selected .table-cell {
-   -fx-text-fill: -fx-text-inner-color;
+.grid-row.selected {
+    -fx-background-color: -webfx-visualgrid-selection-color;
 }
 
 /*===== webfx-extras-webtext-javafx@main.css from webfx-extras-webtext-peers-openjfx =====*/
