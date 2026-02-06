@@ -38,7 +38,7 @@
         <module>webfx-demo-enzoclocks-application-gwt</module>
         <module>webfx-demo-enzoclocks-application-j2cl</module>
         <module>webfx-demo-enzoclocks-application-openjfx</module>
-        <module>webfx-demo-enzoclocks-application-teavm</module>
+        <module>webfx-demo-enzoclocks-application-teavm-js</module>
         <module>webfx-demo-enzoclocks-application-teavm-wasm</module>
     </modules>
 
